@@ -11,10 +11,14 @@ public class Queue {
     }
 
     public void dequeue() {
+        if (size == 0) throw new UnderflowException();
         --size;
     }
 
     public int getSize() {
         return size;
+    }
+
+    public class UnderflowException extends RuntimeException{
     }
 }

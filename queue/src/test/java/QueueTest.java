@@ -38,4 +38,10 @@ public class QueueTest {
         queue.enqueue(0);
         assertEquals(2, queue.getSize());
     }
+
+    @Test
+    public void throwUnderflowException() {
+        assertThrows(Queue.UnderflowException.class,
+                () -> queue.dequeue());
+    }
 }
