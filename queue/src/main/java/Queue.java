@@ -1,5 +1,11 @@
 public class Queue {
+    private boolean empty = true;
+
     public boolean isEmpty() {
-        return true;
+        return empty;
+    }
+
+    public void enqueue(int element) {
+        empty = false;
     }
 }
