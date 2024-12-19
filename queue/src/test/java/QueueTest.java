@@ -44,4 +44,20 @@ public class QueueTest {
         assertThrows(Queue.UnderflowException.class,
                 () -> queue.dequeue());
     }
+
+    @Test
+    public void enqueueXDequeueX() {
+        queue.enqueue(10);
+        assertEquals(10, queue.dequeue());
+        queue.enqueue(20);
+        assertEquals(20, queue.dequeue());
+    }
+
+    @Test
+    public void enqueueXAndYDequeueXAndY() {
+        queue.enqueue(10);
+        queue.enqueue(20);
+        assertEquals(10, queue.dequeue());
+        assertEquals(20, queue.dequeue());
+    }
 }
