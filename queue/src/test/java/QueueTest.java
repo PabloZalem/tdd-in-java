@@ -22,4 +22,11 @@ public class QueueTest {
         queue.enqueue(0);
         assertFalse(queue.isEmpty());
     }
+
+    @Test
+    public void dequeueElement() {
+        queue.enqueue(0);
+        queue.dequeue();
+        assertTrue(queue.isEmpty());
+    }
 }
