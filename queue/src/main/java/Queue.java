@@ -1,15 +1,20 @@
 public class Queue {
     private boolean empty = true;
+    private int size = 0;
 
     public boolean isEmpty() {
-        return empty;
+        return size == 0;
     }
 
     public void enqueue(int element) {
-        empty = false;
+        size++;
     }
 
     public void dequeue() {
-        empty = true;
+        --size;
+    }
+
+    public int getSize() {
+        return size;
     }
 }
