@@ -8,4 +8,8 @@ public class Queue {
     public void enqueue(int element) {
         empty = false;
     }
+
+    public void dequeue() {
+        empty = true;
+    }
 }
