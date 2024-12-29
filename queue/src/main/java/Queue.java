@@ -2,7 +2,7 @@ public class Queue {
 
     private int size = 0;
     private int[] elements = new int[2];
-    private int contador = 0;
+    private int acc = 0;
 
     public boolean isEmpty() {
         return size == 0;
@@ -10,14 +10,14 @@ public class Queue {
 
     public void enqueue(int element) {
         if (size >= elements.length) throw new OverflowException();
-        contador = 0;
+        acc = 0;
         this.elements[size++] = element;
     }
 
     public int dequeue() {
         if (size == 0) throw new UnderflowException();
         size--;
-        return elements[contador++];
+        return elements[acc++];
     }
 
     public int getSize() {

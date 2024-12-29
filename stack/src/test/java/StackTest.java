@@ -7,13 +7,14 @@ public class StackTest {
     Stack stack;
 
     @Before
-    public void setup() {
+    public void setUp() throws Exception {
         stack = new Stack();
     }
 
     @Test
-    public void createStack() {
+    public void createStasck() {
         assertTrue(stack.isEmpty());
+        assertEquals(0, stack.getSize());
     }
 
     @Test
@@ -32,7 +33,7 @@ public class StackTest {
     }
 
     @Test
-    public void getElementStack() {
+    public void getSizeElement() {
         stack.push(0);
         stack.push(0);
         assertEquals(2, stack.getSize());

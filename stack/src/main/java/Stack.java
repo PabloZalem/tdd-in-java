@@ -1,4 +1,6 @@
 public class Stack {
+
+    private boolean empty = true;
     private int size = 0;
     private int[] elements = new int[2];
 
@@ -12,7 +14,7 @@ public class Stack {
     }
 
     public int pop() {
-        if (this.size == 0) throw new UnderflowException();
+        if (size == 0) throw new UnderflowException();
         return elements[--size];
     }
 
@@ -20,9 +22,9 @@ public class Stack {
         return size;
     }
 
-    public class UnderflowException extends RuntimeException{
+    public class UnderflowException extends RuntimeException {
     }
 
-    public class OverflowException extends RuntimeException{
+    public class OverflowException extends RuntimeException {
     }
 }

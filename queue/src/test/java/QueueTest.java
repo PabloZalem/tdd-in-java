@@ -4,16 +4,17 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class QueueTest {
-    Queue queue;
+    private Queue queue;
 
     @Before
-    public void setup() {
+    public void setUp() throws Exception {
         queue = new Queue();
     }
 
     @Test
     public void createQueue() {
         assertTrue(queue.isEmpty());
+        assertEquals(0, queue.getSize());
     }
 
     @Test
@@ -45,7 +46,7 @@ public class QueueTest {
     }
 
     @Test
-    public void enqueuXDequeueX() {
+    public void enqueueXDequeueX() {
         queue.enqueue(10);
         assertEquals(10, queue.dequeue());
         queue.enqueue(20);
@@ -53,7 +54,7 @@ public class QueueTest {
     }
 
     @Test
-    public void enqueuXAndYDequeueXAndY() {
+    public void enqueueXAndYDequeueXAndY() {
         queue.enqueue(10);
         queue.enqueue(20);
         assertEquals(10, queue.dequeue());
