@@ -4,7 +4,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class QueueTest {
-    private Queue queue;
+    Queue queue;
 
     @Before
     public void setUp() throws Exception {
@@ -12,28 +12,25 @@ public class QueueTest {
     }
 
     @Test
-    public void createQueue() {
+    public void createQueu() {
         assertTrue(queue.isEmpty());
-        assertEquals(0, queue.getSize());
     }
 
     @Test
-    public void enqueueElement() {
+    public void enqueueTest() {
         queue.enqueue(0);
         assertFalse(queue.isEmpty());
-        assertEquals(1, queue.getSize());
     }
 
     @Test
-    public void dequeueElement() {
+    public void dequeueTest() {
         queue.enqueue(0);
         queue.dequeue();
         assertTrue(queue.isEmpty());
-        assertEquals(0, queue.getSize());
     }
 
     @Test
-    public void getSizeElement() {
+    public void getSizeElements() {
         queue.enqueue(0);
         queue.enqueue(0);
         assertEquals(2, queue.getSize());

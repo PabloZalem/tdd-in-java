@@ -1,5 +1,4 @@
 public class Queue {
-
     private int size = 0;
     private int[] elements = new int[2];
     private int acc = 0;
@@ -9,7 +8,7 @@ public class Queue {
     }
 
     public void enqueue(int element) {
-        if (size >= elements.length) throw new OverflowException();
+        if (size >= elements.length)throw new OverflowException();
         acc = 0;
         this.elements[size++] = element;
     }

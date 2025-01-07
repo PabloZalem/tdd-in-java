@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 public class Factorial {
     @Test
-    public void factorial() {
+    public void factialRecursive() {
         assertEquals(1, factor(0));
         assertEquals(1, factor(1));
         assertEquals(2, factor(2));
@@ -12,8 +12,9 @@ public class Factorial {
         assertEquals(24, factor(4));
     }
 
-    private int factor(int n) {
-        if (n < 2) return 1;
-        return factor(n - 1) * n;
+    private int factor(int i) {
+        if (i < 2) return 1;
+
+       return factor(i - 1) * i;
     }
 }
