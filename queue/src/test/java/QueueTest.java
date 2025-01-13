@@ -12,32 +12,35 @@ public class QueueTest {
     }
 
     @Test
-    public void createQueu() {
+    public void createQueue() {
         assertTrue(queue.isEmpty());
+        assertEquals(0, queue.getSize());
     }
 
     @Test
-    public void enqueueTest() {
+    public void enqueueElement() {
         queue.enqueue(0);
         assertFalse(queue.isEmpty());
+        assertEquals(1, queue.getSize());
     }
 
     @Test
-    public void dequeueTest() {
+    public void dequeueElement() {
         queue.enqueue(0);
         queue.dequeue();
         assertTrue(queue.isEmpty());
+        assertEquals(0, queue.getSize());
     }
 
     @Test
-    public void getSizeElements() {
+    public void getSizeElement() {
         queue.enqueue(0);
         queue.enqueue(0);
         assertEquals(2, queue.getSize());
     }
 
     @Test
-    public void throwUnderflowException() {
+    public void getThrowUnderflowException() {
         assertThrows(Queue.UnderflowException.class,
                 () -> queue.dequeue());
     }
@@ -46,16 +49,16 @@ public class QueueTest {
     public void enqueueXDequeueX() {
         queue.enqueue(10);
         assertEquals(10, queue.dequeue());
-        queue.enqueue(20);
-        assertEquals(20, queue.dequeue());
+        queue.enqueue(200);
+        assertEquals(200, queue.dequeue());
     }
 
     @Test
     public void enqueueXAndYDequeueXAndY() {
         queue.enqueue(10);
-        queue.enqueue(20);
+        queue.enqueue(200);
         assertEquals(10, queue.dequeue());
-        assertEquals(20, queue.dequeue());
+        assertEquals(200, queue.dequeue());
     }
 
     @Test

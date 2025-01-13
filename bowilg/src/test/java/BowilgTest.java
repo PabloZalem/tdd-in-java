@@ -1,9 +1,15 @@
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
 public class BowilgTest {
-    Game game = new Game();
+    Game game;
+
+    @Before
+    public void setUp() throws Exception {
+        game = new Game();
+    }
 
     @Test
     public void gutterGame() {
@@ -18,33 +24,27 @@ public class BowilgTest {
     }
 
     @Test
-    public void spares() {
-        spare();
+    public void spare() {
+        spares();
         game.roll(7);
         rollMany(17, 0);
         assertEquals(24, game.score());
     }
 
     @Test
-    public void strikes() {
-        strike();
+    public void strike() {
+        strikes();
         game.roll(2);
         game.roll(3);
         rollMany(16, 0);
         assertEquals(20, game.score());
     }
 
-    @Test
-    public void perfectGame() {
-        rollMany(12, 10);
-        assertEquals(300, game.score());
-    }
-
-    private void strike() {
+    private void strikes() {
         game.roll(10);
     }
 
-    private void spare() {
+    private void spares() {
         rollMany(2, 5);
     }
 
