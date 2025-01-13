@@ -8,8 +8,8 @@ public class Queue {
     }
 
     public void enqueue(int element) {
-        if (size >= elements.length)throw new OverflowException();
-        acc = 0;
+        if (size >= elements.length) throw new OverflowException();
+        acc=0;
         this.elements[size++] = element;
     }
 
